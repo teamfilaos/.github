@@ -1,23 +1,313 @@
-name: 🚀 Feature Request
-description: Suggérer une nouvelle idée pour ce projet
-title: "[Feature]: "
-labels: ["enhancement"]
+
+name: "🚀 Demande d'évolution"
+description: "Proposer, spécifier et planifier une évolution fonctionnelle ou technique"
+title: "[FEATURE] "
+labels:
+  - "enhancement"
+
 body:
   - type: markdown
     attributes:
       value: |
-        Merci de proposer une amélioration !
+        ## 🚀 Demande d'évolution
+
+        Décrivez le besoin, la solution envisagée et le plan
+        d'implémentation.
+
+        L'objectif est de disposer d'une issue suffisamment
+        précise pour être comprise, estimée, développée,
+        testée et validée.
+
+  # ─────────────────────────────────────────────
+  # 1. CONTEXTE ET OBJECTIFS
+  # ─────────────────────────────────────────────
+
   - type: textarea
-    id: problem
+    id: contexte
     attributes:
-      label: Quel problème voulez-vous résoudre ?
-      description: Une description claire de ce qu'est le problème.
+      label: "🎯 Contexte et problématique"
+      description: "Quel problème doit être résolu et pourquoi ?"
+      placeholder: |
+        **Situation actuelle :**
+        Décrire le fonctionnement existant.
+
+        **Problème identifié :**
+        Expliquer les limites ou difficultés rencontrées.
+
+        **Impact :**
+        Préciser les utilisateurs, services ou processus concernés.
     validations:
       required: true
+
+  - type: textarea
+    id: objectifs
+    attributes:
+      label: "🏆 Objectifs et valeur ajoutée"
+      description: "Quels résultats souhaite-t-on obtenir ?"
+      placeholder: |
+        - Objectif principal :
+        - Bénéfices attendus :
+        - Indicateurs de réussite :
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type-evolution
+    attributes:
+      label: "📂 Type d'évolution"
+      options:
+        - "Fonctionnelle"
+        - "Technique"
+        - "Performance"
+        - "Sécurité"
+        - "Architecture"
+        - "Expérience utilisateur (UX/UI)"
+        - "Infrastructure / DevOps"
+        - "Autre"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priorite
+    attributes:
+      label: "⚡ Priorité"
+      options:
+        - "P0 - Critique"
+        - "P1 - Haute"
+        - "P2 - Normale"
+        - "P3 - Basse"
+    validations:
+      required: true
+
+  # ─────────────────────────────────────────────
+  # 2. SPÉCIFICATIONS
+  # ─────────────────────────────────────────────
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📋 Description de l'évolution"
+      description: "Décrire précisément le comportement attendu."
+      placeholder: |
+        **En tant que** [type d'utilisateur],
+        **je souhaite** [fonctionnalité],
+        **afin de** [bénéfice attendu].
+
+        ### Fonctionnement attendu
+        1. L'utilisateur...
+        2. Le système...
+        3. Le résultat...
+
+        ### Règles métier
+        - Règle 1 :
+        - Règle 2 :
+
+        ### Cas particuliers
+        - Cas limite :
+        - Gestion des erreurs :
+    validations:
+      required: true
+
   - type: textarea
     id: solution
     attributes:
-      label: Description de la solution souhaitée
-      description: Dites-nous ce que vous aimeriez qu'il se passe.
+      label: "💡 Solution technique proposée"
+      description: "Présenter l'approche technique envisagée."
+      placeholder: |
+        ### Approche
+        Décrire la solution proposée.
+
+        ### Composants concernés
+        - Frontend :
+        - Backend :
+        - API :
+        - Base de données :
+        - Infrastructure :
+
+        ### Modifications techniques
+        - Nouveaux composants :
+        - Composants à modifier :
+        - Interfaces / contrats API :
+        - Migrations éventuelles :
+
+        ### Alternatives envisagées
+        - Alternative 1 :
+        - Raisons du choix :
+    validations:
+      required: false
+
+  # ─────────────────────────────────────────────
+  # 3. PLAN D'IMPLÉMENTATION
+  # ─────────────────────────────────────────────
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "🛠️ Plan d'implémentation"
+      description: "Décomposer le développement en étapes concrètes et vérifiables."
+      value: |
+        ### Phase 1 — Analyse et conception
+        - [ ] Analyser l'existant et identifier les impacts
+        - [ ] Valider les règles métier et les cas limites
+        - [ ] Définir l'architecture et les contrats d'interface
+        - [ ] Identifier les dépendances et risques techniques
+
+        ### Phase 2 — Préparation
+        - [ ] Préparer les modèles et structures de données
+        - [ ] Définir les éventuelles migrations
+        - [ ] Préparer les configurations et feature flags
+        - [ ] Identifier les prérequis techniques
+
+        ### Phase 3 — Développement
+        - [ ] Implémenter la logique métier
+        - [ ] Développer ou adapter les API
+        - [ ] Développer ou adapter les interfaces utilisateur
+        - [ ] Ajouter la validation et la gestion des erreurs
+        - [ ] Adapter les intégrations et composants existants
+
+        ### Phase 4 — Tests et qualité
+        - [ ] Écrire les tests unitaires
+        - [ ] Écrire les tests d'intégration
+        - [ ] Vérifier les cas limites et scénarios d'erreur
+        - [ ] Vérifier les impacts de sécurité et de performance
+        - [ ] Exécuter les tests de non-régression
+        - [ ] Effectuer la revue de code
+
+        ### Phase 5 — Livraison
+        - [ ] Mettre à jour la documentation
+        - [ ] Préparer le déploiement et le rollback
+        - [ ] Déployer sur l'environnement de validation
+        - [ ] Effectuer la recette fonctionnelle
+        - [ ] Déployer en production
+        - [ ] Vérifier le fonctionnement et les métriques
+      render: markdown
     validations:
       required: true
+
+  # ─────────────────────────────────────────────
+  # 4. VALIDATION ET QUALITÉ
+  # ─────────────────────────────────────────────
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "✅ Critères d'acceptation"
+      description: "Définir les conditions objectives de validation."
+      value: |
+        - [ ] Le comportement attendu est implémenté
+        - [ ] Les règles métier sont respectées
+        - [ ] Les cas d'erreur sont correctement gérés
+        - [ ] Les fonctionnalités existantes ne régressent pas
+        - [ ] Les tests automatisés pertinents sont validés
+        - [ ] La documentation nécessaire est à jour
+
+        ### Scénarios de validation
+        **Scénario 1 — Cas nominal**
+        - Étant donné que...
+        - Lorsque...
+        - Alors...
+
+        **Scénario 2 — Cas d'erreur**
+        - Étant donné que...
+        - Lorsque...
+        - Alors...
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: risques
+    attributes:
+      label: "⚠️ Risques, impacts et dépendances"
+      description: "Identifier les contraintes et points de vigilance."
+      placeholder: |
+        ### Risques
+        - Risque :
+        - Probabilité / impact :
+        - Mesure d'atténuation :
+
+        ### Compatibilité
+        - Rétrocompatibilité :
+        - Impacts sur les données :
+        - Impacts sur les API :
+
+        ### Dépendances
+        - Issues liées :
+        - Pull requests :
+        - Services externes :
+        - Équipes concernées :
+    validations:
+      required: false
+
+  # ─────────────────────────────────────────────
+  # 5. ESTIMATION ET LIVRAISON
+  # ─────────────────────────────────────────────
+
+  - type: dropdown
+    id: complexite
+    attributes:
+      label: "📊 Complexité estimée"
+      options:
+        - "À estimer"
+        - "XS - Très faible"
+        - "S - Faible"
+        - "M - Moyenne"
+        - "L - Élevée"
+        - "XL - Très élevée"
+    validations:
+      required: true
+
+  - type: textarea
+    id: deploiement
+    attributes:
+      label: "🚢 Stratégie de déploiement"
+      description: "Décrire la mise en production et le retour arrière."
+      placeholder: |
+        **Déploiement :**
+        - Prérequis :
+        - Ordre des opérations :
+        - Feature flag :
+
+        **Vérifications post-déploiement :**
+        - Logs :
+        - Métriques :
+        - Tests de validation :
+
+        **Rollback :**
+        - Conditions de déclenchement :
+        - Procédure de retour arrière :
+    validations:
+      required: false
+
+  - type: textarea
+    id: documentation
+    attributes:
+      label: "📚 Documentation et références"
+      description: "Ajouter les ressources utiles."
+      placeholder: |
+        - Documentation technique :
+        - Maquettes / Figma :
+        - Spécifications API :
+        - Issues liées :
+        - ADR / décisions d'architecture :
+    validations:
+      required: false
+
+  # ─────────────────────────────────────────────
+  # 6. DEFINITION OF DONE
+  # ─────────────────────────────────────────────
+
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: "📌 Vérification avant soumission"
+      description: "Confirmer que la demande est suffisamment documentée."
+      options:
+        - label: "Le besoin et les objectifs sont clairement définis"
+          required: true
+        - label: "Les critères d'acceptation sont vérifiables"
+          required: true
+        - label: "Le plan d'implémentation est renseigné ou adapté"
+          required: true
+        - label: "J'ai vérifié qu'aucune issue similaire n'existe"
+          required: true
