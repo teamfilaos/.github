@@ -1,0 +1,130 @@
+
+name: "AI Improvement Recommendation"
+description: "Recommandation d'amélioration technique ou fonctionnelle issue d'une analyse IA"
+title: "[Improvement] "
+labels:
+  - "ai-recommendation"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Recommandation d'amélioration
+        Cette issue décrit une amélioration identifiée par un agent IA.
+        L'implémentation nécessite une validation humaine préalable.
+
+  - type: dropdown
+    id: improvement_type
+    attributes:
+      label: "Type d'amélioration"
+      options:
+        - Technique
+        - Fonctionnelle
+        - Sécurité
+        - Performance
+        - Maintenabilité
+        - Architecture
+        - Tests et qualité
+        - Documentation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priorité recommandée"
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Contexte et problème identifié"
+      description: "Décrire le problème actuel et les limitations constatées."
+      placeholder: |
+        Comportement actuel :
+        Problème identifié :
+        Impact sur le projet :
+    validations:
+      required: true
+
+  - type: textarea
+    id: code_references
+    attributes:
+      label: "Fichiers et composants concernés"
+      description: "Indiquer les fichiers, classes, fonctions ou modules concernés."
+      placeholder: |
+        - src/services/example.ts
+        - src/components/example.tsx
+    validations:
+      required: false
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: "Amélioration proposée"
+      description: "Décrire la solution recommandée et ses bénéfices."
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation_plan
+    attributes:
+      label: "Plan d'implémentation"
+      description: "Décrire les étapes concrètes nécessaires à l'implémentation."
+      placeholder: |
+        1. Identifier les composants à modifier.
+        2. Décrire les modifications techniques.
+        3. Adapter les interfaces et dépendances.
+        4. Ajouter ou modifier les tests.
+        5. Vérifier la non-régression.
+        6. Mettre à jour la documentation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Critères d'acceptation"
+      description: "Définir les conditions permettant de considérer l'amélioration comme terminée."
+      placeholder: |
+        - [ ] Le comportement attendu est implémenté.
+        - [ ] Les tests sont ajoutés et passent.
+        - [ ] Aucune régression n'est détectée.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: "Risques et impacts"
+      description: "Décrire les risques, dépendances et impacts potentiels."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: implementation_status
+    attributes:
+      label: "Décision d'implémentation (validation humaine)"
+      description: "Ce champ doit être renseigné manuellement par un responsable."
+      options:
+        - "À évaluer"
+        - "Acceptée pour implémentation"
+        - "Refusée"
+        - "Reportée"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision_comment
+    attributes:
+      label: "Justification de la décision"
+      description: "Renseigné manuellement lors de la revue."
+    validations:
+      required: false
