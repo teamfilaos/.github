@@ -1,0 +1,81 @@
+
+name: "🚀 Demande d'évolution"
+description: "Proposer une nouvelle fonctionnalité ou une amélioration"
+title: "[FEATURE] "
+labels:
+  - "enhancement"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🚀 Demande d'évolution
+        Décrivez votre besoin afin de faciliter son analyse
+        et sa mise en œuvre.
+
+  - type: textarea
+    id: contexte
+    attributes:
+      label: "🎯 Contexte"
+      description: "Quel problème souhaitez-vous résoudre ?"
+      placeholder: "Décrivez la situation actuelle et le problème rencontré."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "💡 Évolution souhaitée"
+      description: "Décrivez la fonctionnalité ou l'amélioration attendue."
+      placeholder: |
+        En tant que [utilisateur],
+        je souhaite [fonctionnalité],
+        afin de [bénéfice].
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: "📂 Type d'évolution"
+      options:
+        - "Fonctionnelle"
+        - "Technique"
+        - "Performance"
+        - "Sécurité"
+        - "Autre"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priorite
+    attributes:
+      label: "⚡ Priorité estimée"
+      options:
+        - "À qualifier"
+        - "Haute"
+        - "Normale"
+        - "Basse"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteres
+    attributes:
+      label: "✅ Critères d'acceptation"
+      description: "Comment vérifier que l'évolution fonctionne ?"
+      placeholder: |
+        - [ ] L'utilisateur peut...
+        - [ ] Le système doit...
+        - [ ] En cas d'erreur...
+    validations:
+      required: true
+
+  - type: textarea
+    id: informations
+    attributes:
+      label: "📎 Informations complémentaires"
+      description: "Liens, captures d'écran, documentation ou références."
+    validations:
+      required: false
